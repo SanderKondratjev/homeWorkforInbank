@@ -36,6 +36,6 @@ public class LoanDecisionService {
                 }
             }
         }
-        return "Please correct data";
+        return "Loan request needs to be between 2000 - 10000 EUR and period 12-60 months";
     }
 }
