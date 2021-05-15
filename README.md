@@ -1,4 +1,4 @@
-# homeWorkforInbank
+# Homework for Inbank
 # This was made in IntellJ. 
 # 1. Open this project.
 # 2. Run 'HomeWorkApplication'
