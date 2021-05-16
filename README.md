@@ -27,5 +27,5 @@ The customer data what is the database is following:
 7. Blank URL: http://localhost:8080/loan-decision?customerid=49002010998&loanamount=AMOUNT&loanperiod=PERIOD
 
 
-### Have fun with
+### Have fun
 
