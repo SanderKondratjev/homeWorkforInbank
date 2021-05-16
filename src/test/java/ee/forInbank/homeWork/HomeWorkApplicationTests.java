@@ -21,7 +21,7 @@ class HomeWorkApplicationTests {
 	@Test
 	void loanDecisionTest() throws Exception{
 
-		this.mockMvc.perform(get("loan-decision"))
+		this.mockMvc.perform(get("loan-decision?customerid=49002010965&loanamount=6000&loanperiod=12"))
 				.contentType("application/json")
 				.param("customerid", "loanamount", "loanperiod")
 				.andExpect(status().isOk())
