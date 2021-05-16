@@ -29,3 +29,11 @@ The customer data what is the database is following:
 
 ### Have fun
 
+### How project was done
+1. Made a new project in https://start.spring.io/ where dependencies were added
+2. Made database in PostgreSQL and added code in 'changelog-1.0.xml' where was added customer data which would automatically go in database when you run 'HomeWorkApplication' 
+3. Made a code to to get customer credit modifier using customer ID (Repository)
+4. Checked if creditscore is under 1 then loan application would be denied and over 1 approved.
+5. Added if statement for min and max loan amount and loan period.
+6. Added if statement where creditscore is under 1 to see if it possible to approve smaller loan request if not, then longer loan period.
+7. Added if statement where creditscore is over 1 to see if is possible to approve larger loan request.
