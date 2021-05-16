@@ -19,7 +19,7 @@ class HomeWorkApplicationTests {
 	private LoanDecisionController loanDecisionController;
 
 	@Test
-	void setLoanDecisionController() throws Exception{
+	void loanDecisionTest() throws Exception{
 
 		this.mockMvc.perform(get("loan-decision"))
 				.contentType("application/json")
