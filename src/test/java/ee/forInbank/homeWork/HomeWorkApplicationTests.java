@@ -20,7 +20,7 @@ class HomeWorkApplicationTests {
 	private MockMvc mockMvc;
 
 	@Test
-	void debtCustomer() throws Exception{
+	void loanDenied() throws Exception{
 
 		this.mockMvc.perform(get("http://localhost:8080/loan-decision")
 				.contentType("application/json")
@@ -31,7 +31,7 @@ class HomeWorkApplicationTests {
 				.andExpect(content().string(containsString("Apologies, Your loan application is denied")));
 	}
 	@Test
-	void segmentOneCustomer() throws Exception{
+	void loanLongerPeriod() throws Exception{
 
 		this.mockMvc.perform(get("http://localhost:8080/loan-decision")
 				.contentType("application/json")
@@ -42,7 +42,7 @@ class HomeWorkApplicationTests {
 				.andExpect(content().string(containsString("Apologies, no suitable loan amount was found. The maximum loan period for that amount would be 60 months.")));
 	}
 	@Test
-	void segmentTwoCustomer() throws Exception{
+	void loanSmallerLoan() throws Exception{
 
 		this.mockMvc.perform(get("http://localhost:8080/loan-decision")
 				.contentType("application/json")
@@ -53,7 +53,7 @@ class HomeWorkApplicationTests {
 				.andExpect(content().string(containsString("Apologies, the maximum amount you can request is 3600.0 EUR.")));
 	}
 	@Test
-	void segmentThreeCustomer() throws Exception{
+	void loanLargerLoan() throws Exception{
 
 		this.mockMvc.perform(get("http://localhost:8080/loan-decision")
 				.contentType("application/json")
