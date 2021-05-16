@@ -14,15 +14,15 @@ public class LoanDecisionController {
     @Autowired
     private LoanDecisionService loanDecisionService;
 
-//    TODO testcase 1: http://localhost:8080/loandecision?customerid=49002010965&loanamount=6000&loanperiod=12
-//    TODO testcase 2: http://localhost:8080/loandecision?customerid=49002010976&loanamount=6000&loanperiod=12
-//    TODO testcase 3: http://localhost:8080/loandecision?customerid=49002010987&loanamount=6000&loanperiod=12
-//    TODO testcase 4: http://localhost:8080/loandecision?customerid=49002010998&loanamount=6000&loanperiod=12
+//    TODO testcase 1: http://localhost:8080/loan-decision?customerid=49002010965&loanamount=6000&loanperiod=12
+//    TODO testcase 2: http://localhost:8080/loan-decision?customerid=49002010976&loanamount=6000&loanperiod=12
+//    TODO testcase 3: http://localhost:8080/loan-decision?customerid=49002010987&loanamount=6000&loanperiod=12
+//    TODO testcase 4: http://localhost:8080/loan-decision?customerid=49002010998&loanamount=6000&loanperiod=12
 
-    @GetMapping("loandecision")
-    public String loanSum(@RequestParam("customerid") Double customerId,
-                          @RequestParam("loanamount") Double loanAmount,
-                          @RequestParam("loanperiod") Integer loanPeriod) {
-        return loanDecisionService.loanSum(customerId, loanAmount, loanPeriod);
+    @GetMapping("loan-decision")
+    public String getLoanDecision(@RequestParam("customerid") double customerId,
+                                  @RequestParam("loanamount") double loanAmount,
+                                  @RequestParam("loanperiod") int loanPeriod) {
+        return loanDecisionService.getLoanDecision(customerId, loanAmount, loanPeriod);
     }
 }

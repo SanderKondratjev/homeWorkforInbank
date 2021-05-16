@@ -10,14 +10,14 @@ public class LoanDecisionService {
     @Autowired
     private LoanDecisionRepository loanDecisionRepository;
 
-    public String loanSum(Double customerId, Double loanAmount, Integer loanPeriod) {
+    public String getLoanDecision(double customerId, double loanAmount, int loanPeriod) {
         if (loanAmount >= 2000 && loanAmount <= 10000 && loanPeriod >= 12 && loanPeriod <= 60) {
-            Double creditModifier = loanDecisionRepository.getCreditModifier(customerId);
+            double creditModifier = loanDecisionRepository.getCreditModifier(customerId);
             double creditScore;
             creditScore = (creditModifier / loanAmount) * loanPeriod;
             if (creditScore < 1) {
-                Double maxLoanAmount = creditModifier * loanPeriod;
-                Double maxLoanPeriod = loanPeriod / creditScore;
+                double maxLoanAmount = creditModifier * loanPeriod;
+                double maxLoanPeriod = loanPeriod / creditScore;
                 if (maxLoanAmount >= 2000 && maxLoanAmount <= 10000) {
                     return "Apologies, the maximum amount you can request is " +
                             maxLoanAmount + " EUR.";
@@ -28,7 +28,7 @@ public class LoanDecisionService {
                     return "Apologies, Your loan application is denied";
                 }
             } else {
-                Double maxLoanAmount = creditModifier * loanPeriod;
+                double maxLoanAmount = creditModifier * loanPeriod;
                 if (maxLoanAmount >= 10000) {
                     return "Your loan application is positive. The maximum amount you can request is 10000 EUR";
                 } else {

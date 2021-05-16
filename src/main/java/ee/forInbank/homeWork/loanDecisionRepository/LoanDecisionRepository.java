@@ -13,7 +13,7 @@ public class LoanDecisionRepository {
     @Autowired
     private NamedParameterJdbcTemplate jdbcTemplate;
 
-    public Double getCreditModifier(Double customerId) {
+    public Double getCreditModifier(double customerId) {
         String sql = "SELECT credit_modifier FROM customers WHERE customer_id=:dbCustomerId";
         Map<String, Object> creditModifierMap = new HashMap<>();
         creditModifierMap.put("dbCustomerId", customerId);
