@@ -21,11 +21,16 @@ class HomeWorkApplicationTests {
 
 	@Test
 	void loanDecisionTest() throws Exception{
+//		double customerid = 49002010965L;
+//		double loanamount = 6000.0;
+//		int loanperiod = 12;
 
-		this.mockMvc.perform(get("loan-decision?customerid=49002010965&loanamount=6000&loanperiod=12")
+		this.mockMvc.perform(get("http://localhost:8080/loan-decision")
 				.contentType("application/json")
-				.param("justName", "customerid","loanamount", "loanperiod"))
+				.param("customerid", "49002010965")
+				.param("loanamount", "6000")
+				.param("loanperiod", "12"))
 				.andExpect(status().isOk())
-				.andExpect(content().string(containsString("st")));
+				.andExpect(content().string(containsString("Apologies, Your loan application is denied")));
 	}
 }

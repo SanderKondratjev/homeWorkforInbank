@@ -6,11 +6,11 @@
 
     <changeSet id="2021-05-15 customers" author="Sander Kondratjev">
         <createTable tableName="customers">
-            <column name="customer_id" type="numeric">
+            <column name="customer_id" type="bigint">
                 <constraints primaryKey="true" unique="true"/>
             </column>
             <column name="segment" type="text"/>
-            <column name="credit_modifier" type="numeric"/>
+            <column name="credit_modifier" type="bigint"/>
         </createTable>
     </changeSet>
     <changeSet id="2021-05-15 customer data" author="Sander Kondratjev">
