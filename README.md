@@ -12,10 +12,10 @@
 FYI
 After you have run the server, automatically the database is filled with customer data (code can be found in 'changelog-1.0.xml).
 The customer data what is the database is following:
-49002010965 - debt
-49002010976 - segment 1 (credit_modifier = 100)
-49002010987 - segment 2 (credit_modifier = 300)
-49002010998 - segment 3 (credit_modifier = 1000)
+1. 49002010965 - debt
+2. 49002010976 - segment 1 (credit_modifier = 100)
+3. 49002010987 - segment 2 (credit_modifier = 300)
+4. 49002010998 - segment 3 (credit_modifier = 1000)
 
 ### Run tests - one way
 1. Go to your browser and write in url next testcases:
