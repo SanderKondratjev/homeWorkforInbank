@@ -26,6 +26,10 @@ The customer data what is the database is following:
 6. Or you can make your own testcases, just write values in 'AMOUNT' and 'PERIOD'
 7. Blank URL: http://localhost:8080/loan-decision?customerid=49002010998&loanamount=AMOUNT&loanperiod=PERIOD
 
+### Run tests - other way
+1. Run 'HomeWorkApplicationTests'
+2. homeWork > src > test > java > ee.forInbank.homeWork > HomeWorkApplicationTests - run this file.
+3. Watch the magic happen. You can open this file and see what is tested and what outcome is needed (same test cases as in above)
 
 ### Have fun
 
@@ -37,3 +41,6 @@ The customer data what is the database is following:
 5. Added if statement for min and max loan amount and loan period.
 6. Added if statement where creditscore is under 1 to see if it possible to approve smaller loan request if not, then longer loan period.
 7. Added if statement where creditscore is over 1 to see if is possible to approve larger loan request.
+
+### Next steps
+1. Front-end development (lack of time it was not made)
