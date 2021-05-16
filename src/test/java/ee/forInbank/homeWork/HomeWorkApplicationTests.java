@@ -20,10 +20,7 @@ class HomeWorkApplicationTests {
 	private MockMvc mockMvc;
 
 	@Test
-	void loanDecisionTest() throws Exception{
-//		double customerid = 49002010965L;
-//		double loanamount = 6000.0;
-//		int loanperiod = 12;
+	void debtCustomer() throws Exception{
 
 		this.mockMvc.perform(get("http://localhost:8080/loan-decision")
 				.contentType("application/json")
@@ -32,5 +29,38 @@ class HomeWorkApplicationTests {
 				.param("loanperiod", "12"))
 				.andExpect(status().isOk())
 				.andExpect(content().string(containsString("Apologies, Your loan application is denied")));
+	}
+	@Test
+	void segmentOneCustomer() throws Exception{
+
+		this.mockMvc.perform(get("http://localhost:8080/loan-decision")
+				.contentType("application/json")
+				.param("customerid", "49002010976")
+				.param("loanamount", "6000")
+				.param("loanperiod", "12"))
+				.andExpect(status().isOk())
+				.andExpect(content().string(containsString("Apologies, no suitable loan amount was found. The maximum loan period for that amount would be 60 months.")));
+	}
+	@Test
+	void segmentTwoCustomer() throws Exception{
+
+		this.mockMvc.perform(get("http://localhost:8080/loan-decision")
+				.contentType("application/json")
+				.param("customerid", "49002010987")
+				.param("loanamount", "6000")
+				.param("loanperiod", "12"))
+				.andExpect(status().isOk())
+				.andExpect(content().string(containsString("Apologies, the maximum amount you can request is 3600.0 EUR.")));
+	}
+	@Test
+	void segmentThreeCustomer() throws Exception{
+
+		this.mockMvc.perform(get("http://localhost:8080/loan-decision")
+				.contentType("application/json")
+				.param("customerid", "49002010998")
+				.param("loanamount", "6000")
+				.param("loanperiod", "12"))
+				.andExpect(status().isOk())
+				.andExpect(content().string(containsString("Your loan application is positive. The maximum amount you can request is 10000 EUR")));
 	}
 }
